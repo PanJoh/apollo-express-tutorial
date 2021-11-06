@@ -16,7 +16,7 @@ jobs:
 
       - name: show project id
         run: echo ${{ secrets.GCP_PROJECT_ID }}
-        
+
       - name: Login
         uses: google-github-actions/setup-gcloud@master
         with:
@@ -40,5 +40,5 @@ jobs:
         run: docker push $IMAGE_NAME
         
       - name: Deploy Docker image
-        run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image $IMAGE_NAME --region europe-west-a1 --platform  managed
+        run: gcloud run deploy ${{ secrets.GCP_PROJECT_ID }} --image $IMAGE_NAME --region europe-west3-a --platform  managed
  
